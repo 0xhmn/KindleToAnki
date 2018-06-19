@@ -13,6 +13,5 @@ class Constant {
         const val HELP_SHORT_ARG = "h"
         const val HELP_LONG_ARG = "help"
         const val HELP_DESCRIPTION = "Help Menu"
-
     }
 }

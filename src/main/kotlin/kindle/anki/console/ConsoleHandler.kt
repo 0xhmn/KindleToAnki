@@ -10,8 +10,8 @@ import org.apache.commons.cli.ParseException
 
 class ConsoleHandler {
 
-    val IS_DB_REQUIRED = true
-    val IS_OUTPUT_REQUIRED = false
+    private val IS_DB_REQUIRED = true
+    private val IS_OUTPUT_REQUIRED = false
 
     private fun generateOptions(isDbRequired: Boolean, isOutputRequired: Boolean) : Options {
         val options =  Options()
@@ -45,7 +45,6 @@ class ConsoleHandler {
 
     public fun createCommandLine(args: Array<String>) : CommandLine {
         val options = generateOptions(IS_DB_REQUIRED, IS_OUTPUT_REQUIRED)
-
         val parser = DefaultParser()
         val formatter = HelpFormatter()
 

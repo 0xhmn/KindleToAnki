@@ -1,15 +1,20 @@
 import kindle.anki.console.ConsoleHandler
+import kindle.anki.data.DatabaseHandler
+
+val consoleHandler: ConsoleHandler = ConsoleHandler()
+val databaseHandler: DatabaseHandler = DatabaseHandler()
 
 fun main(args: Array<String>) {
 
-    val consoleHandler:ConsoleHandler = ConsoleHandler()
     val cmd = consoleHandler.createCommandLine(args)
 
-    var inputArg: String = ""
+    var pathToDb: String = ""
     var outArg: String = ""
 
     if (cmd.hasOption("d")) {
-        inputArg = cmd.getOptionValue("db")
+        pathToDb = cmd.getOptionValue("db")
+
+        databaseHandler.readFile(pathToDb)
     }
     if (cmd.hasOption("o")) {
         outArg = cmd.getOptionValue("output")
@@ -18,6 +23,6 @@ fun main(args: Array<String>) {
         println("help is selected")
     }
 
-    println(inputArg)
+    println(pathToDb)
     print(outArg)
 }
